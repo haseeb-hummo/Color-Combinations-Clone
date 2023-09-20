@@ -1,13 +1,23 @@
+/* Define the font for 'Neue Haas Grotesk' */
 @font-face {
   font-family: Neue Haas Grotesk;
   src: url("./Fonts/Neue\ Haas\ Grotesk\ Text\ Pro.ttf");
 }
+@font-face {
+  font-family: Digital-7;
+  src: url("./Fonts/digital-7.regular.ttf");
+}
 
+/* Apply styles to all elements in the document */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Neue Haas Grotesk;
+
+  &::selection {
+    background-color: #a2a2a2;
+  }
 }
 
 /* Set full height and width for HTML and body */
@@ -17,71 +27,292 @@ body {
   width: 100%;
 }
 
+/* Styles for the main container */
 .main {
   width: 100%;
+  overflow: hidden;
+  background-color: #a2a2a2;
 }
 
+/* Styles for the home section */
 .home {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  position: relative;
-  overflow: hidden;
 
+  /* Styles for the background image */
   & img {
     height: 100%;
     width: 100%;
     object-fit: cover;
   }
 
-  & .circle {
-    height: 50vw;
-    width: 50vw;
+  /* Styles for the overlay div */
+  & .overlay {
+    height: 100%;
+    width: 100%;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background-color: black;
-    
-    & img {
+    top: 0;
+    left: 0;
+
+    & h1#gallery {
+      font-size: 12vw;
+      font-weight: 400;
+      color: rgba(49, 49, 49, 1);
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      pointer-events: none;
+      z-index: 9;
+    }
+
+    & h1#pinkFlare {
+      font-size: 12vw;
+      font-weight: 400;
+      color: white;
+      position: absolute;
+      bottom: -50%;
+      left: 50%;
+      transform: translate(-50%, 0%) rotate(30deg);
+      transform-origin: 0% 50%;
+      white-space: nowrap;
+      z-index: 99;
+    }
+
+    /* Styles for the navigation bar */
+    & .nav {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 50px;
+      pointer-events: none;
+      z-index: 9;
+
+      /* Styles for navigation bar images */
+      & img {
+        &:nth-child(1) {
+          width: 135px;
+          z-index: 9;
+        }
+
+        &:nth-child(2) {
+          width: 85px;
+        }
+      }
+    }
+
+    /* Styles for the bottom navigation */
+    & .bottomNav {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 50px;
+      pointer-events: none;
+      z-index: 9;
+
+      /* Styles for bottom navigation images */
+      & img {
+        width: 85px;
+      }
+    }
+
+    /* Styles for the center image and text */
+    & .centerImg {
+      width: 28vw;
+      position: absolute;
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 99;
+
+      /* Styles for the heading */
+      & h5 {
+        font-size: 0.9vw;
+        font-weight: 400;
+
+        &:nth-child(1) {
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Styles for the center image container */
+      & .cImg {
+        position: relative;
+        width: 100%;
+        height: 16vw;
+        overflow: hidden;
+      }
+    }
+
+    & .pinkBox {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 32vw;
+      height: 30vw;
+      color: #fff;
+      font-weight: 100;
+      background-color: rgb(213, 167, 180);
+      z-index: 8;
+
+      & .pbTop {
+        position: absolute;
+        top: 30%;
+        left: 12%;
+        font-size: 1vw;
+        white-space: nowrap;
+        cursor: pointer;
+
+        & .first {
+          margin-bottom: 15px;
+
+          &:hover {
+            color: #d5a7b4;
+            background-color: #fff;
+          }
+        }
+
+        & .second {
+          margin-left: 30%;
+
+          & h5 {
+            position: relative;
+            width: fit-content;
+
+            &:nth-child(2) {
+              margin-bottom: 15px;
+            }
+
+            &:hover {
+              color: #d5a7b4;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+
+      & .pbBottom {
+        position: absolute;
+        bottom: 20%;
+        left: 12%;
+        display: flex;
+        gap: 150px;
+
+        & h5 {
+          font-size: 0.85vw;
+        }
+
+        & span {
+          width: 100%;
+          position: absolute;
+          top: 50%;
+          font-family: Digital-7;
+          font-size: 2.4vw;
+        }
+
+        & .first {
+          & span {
+            left: 15%;
+          }
+        }
+
+        & .second {
+          & span {
+            left: 100%;
+          }
+        }
+      }
+    }
+
+    & .flyingCircle {
+      height: 4vw;
+      width: 4vw;
+      border-radius: 50%;
+      background-color: #d5a7b4;
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    /* Styles for the center circle */
+    & .centerCircle {
+      height: 46.5vw;
+      width: 46.5vw;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: white;
     }
-    
-    .topCircle {
-      background-color: purple;
-      
+
+    /* Styles for the outer circle */
+    & .circle {
+      height: 50vw;
+      width: 50vw;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: transparent;
+
+      /* Styles for circle images */
       & img {
-        
-        &:nth-child(1){
-          transform: translate(-50% , -50%) rotate(180deg) scale(1);
-        }
-        &:nth-child(2){
-          transform: translate(-50% , -50%) rotate(180deg) scale(1.5);
-        }
-        &:nth-child(3){
-          transform: translate(-50% , -50%) rotate(180deg) scale(2);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Styles for top circle */
+      .topCircle {
+        & img {
+          &:nth-child(1) {
+            transform: translate(-49.9%, -49.9%) rotate(180deg) scale(1.5);
+          }
+          &:nth-child(2) {
+            transform: translate(-49.9%, -49.9%) rotate(180deg) scale(2);
+          }
+          &:nth-child(3) {
+            transform: translate(-49.9%, -49.9%) rotate(180deg) scale(2.5);
+          }
         }
       }
-    }
-    
-    .bottomCircle {
-      background-color: yellow;
-      
-      & img {
-        
-        &:nth-child(1){
-          transform: translate(-50% , -50%) rotate(-10deg) scale(1);
-        }
-        &:nth-child(2){
-          transform: translate(-50% , -50%) rotate(-20deg) scale(1.5);
-        }
-        &:nth-child(3){
-          transform: translate(-50% , -50%) rotate(-30deg) scale(2);
+
+      /* Styles for bottom circle */
+      .bottomCircle {
+        & img {
+          &:nth-child(1) {
+            transform: translate(-50%, -50%) scale(2.5);
+          }
+          &:nth-child(2) {
+            transform: translate(-50%, -50%) scale(2);
+          }
+          &:nth-child(3) {
+            transform: translate(-50%, -50%) scale(1.5);
+          }
         }
       }
     }
   }
+}
+
+/* Styles for page 2 */
+.page2 {
+  height: 100vh;
+  width: 100vw;
 }
