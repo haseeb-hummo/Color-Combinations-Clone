@@ -31,7 +31,6 @@ body {
 .main {
   width: 100%;
   overflow: hidden;
-  background-color: #a2a2a2;
 }
 
 /* Styles for the home section */
@@ -41,6 +40,10 @@ body {
   width: 100vw;
 
   /* Styles for the background image */
+  & #homeImg {
+    transform: scale(1.6);
+  }
+
   & img {
     height: 100%;
     width: 100%;
@@ -51,6 +54,7 @@ body {
   & .overlay {
     height: 100%;
     width: 100%;
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -60,7 +64,7 @@ body {
       font-weight: 400;
       color: rgba(49, 49, 49, 1);
       position: absolute;
-      bottom: 0%;
+      bottom: -2%;
       left: 50%;
       transform: translate(-50%, 0%);
       pointer-events: none;
@@ -95,6 +99,7 @@ body {
 
       /* Styles for navigation bar images */
       & img {
+
         &:nth-child(1) {
           width: 135px;
           z-index: 9;
@@ -130,7 +135,7 @@ body {
       width: 28vw;
       position: absolute;
       top: 48%;
-      left: 50%;
+      left: 84%;
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 99;
@@ -206,7 +211,7 @@ body {
         bottom: 20%;
         left: 12%;
         display: flex;
-        gap: 150px;
+        gap: 10vw;
 
         & h5 {
           font-size: 0.85vw;
@@ -240,7 +245,7 @@ body {
       border-radius: 50%;
       background-color: #d5a7b4;
       position: absolute;
-      top: 120%;
+      top: 105%;
       left: 50%;
       transform: translate(-50%, -50%);
       pointer-events: none;
@@ -257,6 +262,7 @@ body {
       transform: translate(-50%, -50%);
       border-radius: 50%;
       background-color: white;
+      z-index: 8;
     }
 
     /* Styles for the outer circle */
@@ -269,6 +275,7 @@ body {
       transform: translate(-50%, -50%);
       border-radius: 50%;
       background-color: transparent;
+      z-index: 8;
 
       /* Styles for circle images */
       & img {
@@ -313,6 +320,122 @@ body {
 
 /* Styles for page 2 */
 .page2 {
+  position: relative;
   height: 100vh;
   width: 100vw;
+
+  & .p2Nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+    pointer-events: none;
+    z-index: 99;
+
+    /* Styles for navigation bar images */
+    & img {
+
+      &:nth-child(1) {
+        width: 135px;
+        z-index: 9;
+      }
+
+      &:nth-child(2) {
+        width: 85px;
+      }
+    }
+  }
+
+  & .p2Top {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    border-bottom: 1.5px solid #a2a2a280;
+    overflow: hidden;
+
+    & .circle {
+      height: 14vw;
+      width: 14vw;
+      border-radius: 50%;
+      position: absolute;
+      top: 140%;
+      transform: translate(-50% , -50%);
+    }
+
+    & .pink {
+      left: 40%;
+      z-index: 8;
+      background-color: rgb(213, 167, 180);
+    }
+    
+    & .purple {
+      left: 58%;
+      z-index: 7;
+      background-color: rgb(180, 170, 213);
+    }
+
+    & h1 {
+      font-size: 30vw;
+      font-weight: 400;
+      color: #fff;
+      position: absolute;
+      bottom: -15%;
+      left: 100%;
+      line-height: 1;
+      letter-spacing: -25px;
+      z-index: 9;
+    }
+
+    & .gradientImg {
+      width: 200%;
+      position: absolute;
+      left: 100%;
+      z-index: 8;
+    }
+  }
+
+  & .p2Bottom {
+    position: relative;
+    height: 40%;
+    width: 100%;
+
+    & p {
+      font-size: 3.5vw;
+      font-weight: 400;
+      color: #282828;
+      letter-spacing: -2px;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      
+      &:nth-child(2){
+        opacity: 0;
+      }
+    }
+  }
+
+  & .p2BottomNav {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 50px;
+    pointer-events: none;
+    z-index: 9;
+
+    /* Styles for bottom navigation images */
+    & img {
+      width: 85px;
+    }
+  }
 }
