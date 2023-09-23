@@ -96,10 +96,8 @@ body {
       padding: 30px 50px;
       pointer-events: none;
       z-index: 9;
-
       /* Styles for navigation bar images */
       & img {
-
         &:nth-child(1) {
           width: 135px;
           z-index: 9;
@@ -338,7 +336,6 @@ body {
 
     /* Styles for navigation bar images */
     & img {
-
       &:nth-child(1) {
         width: 135px;
         z-index: 9;
@@ -363,7 +360,7 @@ body {
       border-radius: 50%;
       position: absolute;
       top: 140%;
-      transform: translate(-50% , -50%);
+      transform: translate(-50%, -50%);
     }
 
     & .pink {
@@ -371,7 +368,7 @@ body {
       z-index: 8;
       background-color: rgb(213, 167, 180);
     }
-    
+
     & .purple {
       left: 58%;
       z-index: 7;
@@ -396,6 +393,114 @@ body {
       left: 100%;
       z-index: 8;
     }
+
+    & .colors {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 9;
+
+      & .box {
+        position: absolute;
+
+        &:nth-child(1) {
+          height: 18%;
+          width: 100%;
+          left: 0%;
+          bottom: 0%;
+          z-index: 9;
+        }
+
+        &:nth-child(2) {
+          height: 18%;
+          width: 100%;
+          left: 0%;
+          bottom: 18%;
+          z-index: 9;
+        }
+      }
+    }
+
+    & .color1 {
+      width: 20vw;
+      height: 60vh;
+      background-color: rgb(223, 177, 190);
+
+      & .box:nth-child(1) {
+        background-color: rgb(223, 177, 190);
+      }
+      & .box:nth-child(2) {
+        background-color: rgb(223, 177, 190);
+      }
+    }
+    & .color2 {
+      width: 20vw;
+      height: 60vh;
+      left: 20%;
+      background-color: rgb(233, 187, 200);
+
+      & .box:nth-child(1) {
+        background-color: rgb(233, 187, 200);
+      }
+      & .box:nth-child(2) {
+        background-color: rgb(233, 187, 200);
+      }
+    }
+    & .color3 {
+      width: 20vw;
+      height: 60vh;
+      left: 40%;
+      background-color: rgb(243, 197, 210);
+
+      & .box:nth-child(1) {
+        background-color: rgb(243, 197, 210);
+      }
+      & .box:nth-child(2) {
+        background-color: rgb(243, 197, 210);
+      }
+    }
+    & .color4 {
+      width: 20vw;
+      height: 60vh;
+      left: 60%;
+      background-color: rgb(253, 207, 220);
+
+      & .box:nth-child(1) {
+        background-color: rgb(253, 207, 220);
+      }
+      & .box:nth-child(2) {
+        background-color: rgb(253, 207, 220);
+      }
+    }
+    & .color5 {
+      width: 20vw;
+      height: 60vh;
+      left: 80%;
+      background-color: rgb(255, 227, 240);
+
+      & .box:nth-child(1) {
+        background-color: rgb(255, 227, 240);
+      }
+      & .box:nth-child(2) {
+        background-color: rgb(255, 227, 240);
+      }
+      & .box:nth-child(3) {
+        height: 18%;
+        width: 100%;
+        left: 100%;
+        bottom: 0%;
+        background-color: rgb(255, 237, 250);
+        z-index: 8;
+      }
+      & .box:nth-child(4) {
+        height: 18%;
+        width: 100%;
+        left: 100%;
+        bottom: 18%;
+        background-color: rgb(255, 237, 250);
+        z-index: 8;
+      }
+    }
   }
 
   & .p2Bottom {
@@ -414,8 +519,8 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      
-      &:nth-child(2){
+
+      &:nth-child(2) {
         opacity: 0;
       }
     }
@@ -436,6 +541,127 @@ body {
     /* Styles for bottom navigation images */
     & img {
       width: 85px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    & .overlay {
+      & h1#gallery {
+        font-size: 12vw;
+        margin-bottom: 20%;
+      }
+
+      & h1#pinkFlare {
+        font-size: 13vw;
+        margin-bottom: 120px;
+      }
+
+      & .nav {
+        padding: 30px 30px;
+      }
+
+      & .bottomNav {
+        padding: 30px 30px;
+      }
+
+      & .centerImg {
+        width: 80vw;
+        left: 150%;
+
+        & h5 {
+          font-size: 2.5vw;
+        }
+
+        & .cImg {
+          height: 45vw;
+        }
+      }
+
+      & .pinkBox {
+        width: 87vw;
+        height: 85vw;
+
+        & .pbTop {
+          font-size: 3.2vw;
+        }
+
+        & .pbBottom {
+          gap: 26vw;
+
+          & h5 {
+            font-size: 2vw;
+          }
+        }
+      }
+
+      & .flyingCircle {
+        height: 10vw;
+        width: 10vw;
+      }
+
+      & .centerCircle {
+        height: 88vw;
+        width: 88vw;
+      }
+
+      & .circle {
+        height: 95vw;
+        width: 95vw;
+      }
+    }
+  }
+
+  .page2 {
+    & .p2Nav {
+      padding: 30px 30px;
+    }
+
+    & .p2BottomNav {
+      padding: 30px 30px;
+    }
+
+    & .p2Top {
+      height: 55%;
+
+      & .circle {
+        height: 32vw;
+        width: 32vw;
+        border-radius: 50%;
+        position: absolute;
+        top: 140%;
+        transform: translate(-50%, -50%);
+      }
+
+      & .pink {
+        left: 34%;
+        z-index: 8;
+        background-color: rgb(213, 167, 180);
+      }
+
+      & .purple {
+        left: 68%;
+        z-index: 7;
+        background-color: rgb(180, 170, 213);
+      }
+
+      & h1 {
+        font-size: 55vw;
+        bottom: -5%;
+      }
+
+      & .gradientImg {
+        height: 100%;
+      }
+    }
+
+    & .p2Bottom {
+      height: 45%;
+
+      & p {
+        font-size: 7vw;
+      }
     }
   }
 }

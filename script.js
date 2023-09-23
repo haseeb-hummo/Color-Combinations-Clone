@@ -28,25 +28,25 @@ function timelineOne() {
 
     // Animation timeline
     timeline
-        .to(centerImg , {
-            left : "50.5%",
-            duration : 0.2,
+        .to(centerImg, {
+            left: "50.5%",
+            duration: 0.2,
         }, "priority")
-        .to(centerImg , {
-            left : "50%",
-            duration : 0.1,
+        .to(centerImg, {
+            left: "50%",
+            duration: 0.1,
         }, "first")
         .to(circleImagesBottom, {
             scale: 0.8,
             rotate: "-180deg",
             stagger: 0.03,
             ease: "power1",
-            delay : -0.03
+            delay: -0.03
         }, "first")
         .to(circleImagesTop, {
             scale: 0.8,
             ease: "power1",
-            delay : -0.03
+            delay: -0.03
         }, "first")
         .to(overlayGalleryH1, {
             bottom: "-50%",
@@ -55,19 +55,19 @@ function timelineOne() {
         .to(circleImage, {
             scale: 0,
             stagger: 0.03,
-            delay : 0.03,
-            duration : 0.3,
+            delay: 0.03,
+            duration: 0.3,
             ease: "power1",
-        }, "first") 
+        }, "first")
         .to(centerImageHeadings, {
             opacity: 0,
-            delay : -0.1,
+            delay: -0.1,
             ease: "power1",
         }, "first")
         .to(flyingCircle, {
             top: "50%",
             scale: 1.7,
-            duration : 0.3,
+            duration: 0.3,
             ease: "power1",
         }, "first")
         .to(circles, {
@@ -78,8 +78,8 @@ function timelineOne() {
             scale: 0.5,
             ease: "power1",
         }, "first")
-        .to(homeImage , {
-            scale : 1.4,
+        .to(homeImage, {
+            scale: 1.4,
             ease: "power1",
         }, "first")
 
@@ -88,14 +88,14 @@ function timelineOne() {
             bottom: "0%",
             rotate: "0",
             ease: "power1",
-            delay : -0.2
+            delay: -0.2
         }, "second")
         .to(centerCircles, {
             scale: .4,
             ease: "power1",
         }, "second")
-        .to(homeImage , {
-            scale : 1.2,
+        .to(homeImage, {
+            scale: 1.2,
             ease: "power1",
         }, "second")
 
@@ -103,32 +103,32 @@ function timelineOne() {
         .to(flyingCircle, {
             opacity: 0,
             ease: "power1",
-            duration : 0.2
+            duration: 0.2
         }, "third")
         .to(centerCircles, {
             scale: 0,
             ease: "power1",
-            duration : 0.3
+            duration: 0.3
         }, "third")
         .to(circles, {
             scale: 0,
             ease: "power1",
-            duration : 0.3
+            duration: 0.3
         }, "third")
         .to(pinkBox, {
             top: "0%",
             ease: "power1",
-            delay : -0.1
+            delay: -0.1
         }, "third")
-        .to(homeImage , {
-            scale : 1,
+        .to(homeImage, {
+            scale: 1,
             ease: "power1",
         }, "third")
         .to(pinkBox, {
             top: "-70%",
             ease: "power1",
         })
-        
+
 }
 
 
@@ -149,39 +149,73 @@ function timelineTwo() {
 
         .to(".p2Top .circle", {
             top: "50%",
-            scale : 1.42,
-            stagger : .1
+            scale: 1.42,
+            stagger: .1
         })
         .to(".p2Top .circle", {
             top: "50%",
-            duration : 0.15,
+            duration: 0.15,
         })
         .to(".p2Top .circle", {
             left: "50%",
-            duration : 0.2
+            duration: 0.2
         })
         .to(".p2Top .circle", {
             scale: 1,
-            duration : 0.2
+            duration: 0.2
         })
         .to(".pink", {
             scale: 1.85,
-            duration : 0.2
+            duration: 0.2
         })
         .to(".pink", {
             scale: 8,
-            duration : 0.3
+            duration: 0.3
         })
+
         .to(".p2Top h1", {
-            left: "-150%",
-            duration : 3.5,
+            left: "40%",
         }, "gradient")
         .to(".p2Top .gradientImg", {
-            left: "-100%",
-            duration : 3.5,
+            left: "60%",
         }, "gradient")
-        .to(".p2Paragraph1" ,{
-            opacity : 0,
+        .to("#p2Paragraph1", {
+            opacity: 0,
+        }, "gradient2")
+        .to("#p2Paragraph2", {
+            opacity: 1,
+            delay: 0.5
+        }, "gradient2")
+        .to(".p2Top h1", {
+            left: "-150%",
+            duration: 3.5,
+        }, "gradient2")
+        .to(".p2Top .gradientImg", {
+            left: "-100%",
+            duration: 3.5,
+        }, "gradient2")
+
+
+        .to(".colors", {
+            top: 0,
+            stagger: 0.09,
+            duration : 0.3,
+            delay : -0.5
+        })
+        .to(".box:nth-child(1)", {
+            left: "-50%"
+        }, "color")
+        .to(".box:nth-child(2)", {
+            left: "-50%"
+        }, "color")
+        .to(".box:nth-child(3)", {
+            left: "-0%"
+        }, "color")
+        .to(".box:nth-child(4)", {
+            left: "-0%"
+        }, "color")
+        .to(".box:nth-child(1)", {
+            left: "-75%"
         })
 
 }
@@ -190,11 +224,9 @@ timelineOne();
 timelineTwo();
 
 
+function refreshPage() {
+    window.location.reload();
+}
 
-
-
-const p2NavImg = document.querySelectorAll(".p2Nav img");
-
-
-const BottomNavBlackImg = document.querySelectorAll(".bottomNav .blackImg img");
-const BottomNavWhiteImg = document.querySelectorAll(".bottomNav .whiteImg img");
+// Add an event listener for the window resize event
+window.addEventListener('resize', refreshPage);
